@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hotel Supervisor</title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-1.11.3.js" type="text/javascript"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/authorization.js" charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+
+<header id="site_header">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand">Hotel Supervisor</a>
+        </div>
+    </nav>
+</header>
+
+<section id="main_content">
+    <h class="warning">Вы не авторизованы! Только зарегистрированные пользователи имеют доступ к сайту!</h>
+    <div class="authorize_form_container container">
+        <form>
+            <p class="error_message" id="login_error">Пользователь с таким логином не существует!</p>
+            <div class="form-group">
+                <label for="login">Логин</label>
+                <input type="text" class="form-control" id="login" placeholder="Введите логин">
+            </div>
+            <p class="error_message" id="password_error">Не правильный пароль!</p>
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" class="form-control" id="password" placeholder="Введите пароль">
+            </div>
+            <div class="radio">
+            <label class="radio-inline">
+                <input class="role_checker" type="radio" name="optradio" value="admin" checked>Администратор
+            </label>
+            <label class="radio-inline">
+                <input class="role_checker" type="radio" name="optradio" value="employee">Работник
+            </label>
+            </div>
+            <a class="registration" id="registration_link">Зарегистрироваться</a>
+            <button  class="btn btn-default" id="authorization_button" style="float: right">Войти</button>
+        </form>
+    </div>
+</section>
+
+<footer id="site_footer">
+    <div class="container">
+        <div id="rights">All Rights Reserved &copy; 2017</div>
+    </div>
+</footer>
+
+</body>
+</html>

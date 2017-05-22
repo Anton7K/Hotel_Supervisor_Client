@@ -1,0 +1,74 @@
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+a{
+    cursor: pointer;
+}
+/*====================================================Authorize_page==============================*/
+.authorize_form_container{
+    width: 300px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+/*====================================================Main_page==============================*/
+
+#site_header .navbar-brand:hover{
+    color: #9d9d9d;
+}
+#site_header .navbar-right{
+    margin-right: 5px;
+}
+#main_content{
+    padding: 2% 15%;
+}
+.rooms,
+.staff{
+    line-height: 2.428571;
+}
+.hotels ul,
+.rooms ul,
+.staff ul{
+    float: right;
+    list-style: none;
+    display: inline;
+}
+.hotels ul li,
+.rooms ul li,
+.staff ul li{
+    float: left;
+    margin-left: 5px;
+}
+
+
+#site_footer{
+    background-color: #222222;
+    height: 30px;
+    width: 100%;
+    border-color: #080808;
+    border-radius: 4px;
+    color: #9d9d9d;
+    position: absolute;
+    bottom: 0;
+}
+#site_footer #rights{
+    text-align: center;
+    margin-top: 5px;
+}
+.warning{
+    text-align: center;
+    font-size: 16px;
+    color: red;
+}
+
+#page_header{
+    text-align: center;
+}
+
+/*===============================Errors===========================*/
+.error_message{
+    color: red;
+    display: none;
+}

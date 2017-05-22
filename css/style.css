@@ -28,6 +28,7 @@ a{
 .staff{
     line-height: 2.428571;
 }
+.equipment ul,
 .hotels ul,
 .rooms ul,
 .staff ul{
@@ -35,6 +36,7 @@ a{
     list-style: none;
     display: inline;
 }
+.equipment ul li,
 .hotels ul li,
 .rooms ul li,
 .staff ul li{

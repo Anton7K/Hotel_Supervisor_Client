@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-1.11.3.js" type="text/javascript"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/checkSession.js" type="text/javascript"></script>
+    <script src="js/logout.js" type="text/javascript"></script>
+    <script src="js/equipmentPage.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+
+
+<header id="site_header">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand">Hotel Supervisor</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a>Гостиницы</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <p class="navbar-text navbar-right" id="user_name"></p>
+            </li>
+            <li id="logout_link"><a>Выход</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="main_content">
+
+    <div class="rooms_container">
+        <ol class="breadcrumb">
+            <li><a href="home.html">Гостиницы</a></li>
+            <li><a href="#" id="roomsBreadcrumb">Комнаты</a></li>
+            <li class="active">Оборудование</li>
+        </ol>
+        <ul class="list-group equipment">
+            <!--<li class="clearfix list-group-item">-->
+                <!--<span>Cras justo odio</span>-->
+                <!--<div class="progress">-->
+                    <!--<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">-->
+                        <!--60%-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<button class="btn btn-danger">Удалить</button>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<button class="btn btn-info edit_equipment_button" style="display: block">Редактировать</button>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+        </ul>
+        <button class="btn btn-info">+ Добавить оборудование</button>
+    </div>
+</section>
+
+<footer id="site_footer">
+    <div class="container">
+        <div id="rights">All Rights Reserved &copy; 2017</div>
+    </div>
+</footer>
+
+</body>
+</html>

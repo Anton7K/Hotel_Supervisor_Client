@@ -4,10 +4,10 @@
 $(document).ready(function () {
     var hotelId = getParamFromUrl("hotelId");
     getRooms(hotelId);
-    //$(".hotels").on("click",".view_rooms_button", function () {
-    //    var hotelId = $(this).closest(".list-group-item").attr("data-id");
-    //    location.assign("rooms.html?hotelId=" + hotelId);
-    //});
+    $(".rooms").on("click",".view_equipment_button", function () {
+        var roomId = $(this).closest(".list-group-item").attr("data-id");
+        location.assign("equipment.html?roomId=" + roomId + "&hotelId=" + hotelId);
+    });
 });
 function getRooms(hotelId){
     $.ajax({
@@ -40,7 +40,7 @@ function printRooms(element, index, array){
         "<button class='btn btn-info edit_button'>Редактировать</button>" +
         "</li>" +
         "<li>" +
-        "<button class='btn btn-default view_rooms_button'>Оборудование</button>" +
+        "<button class='btn btn-default view_equipment_button'>Оборудование</button>" +
         "</li>" +
         "</ul>" +
         "</li>";

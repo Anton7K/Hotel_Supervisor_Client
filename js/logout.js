@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     function logout() {
         $.ajax({
-            url: 'http://localhost:8080/logout',
+            url: 'http://' + getCookie("configServerIp") + ':8080/logout',
             type: "GET",
             xhrFields: {
                 withCredentials: true

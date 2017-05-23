@@ -8,10 +8,14 @@ $(document).ready(function () {
         var roomId = $(this).closest(".list-group-item").attr("data-id");
         location.assign("equipment.html?roomId=" + roomId + "&hotelId=" + hotelId);
     });
+    $("#addRoomButton").click(function (event) {
+        event.preventDefault();
+        location.assign("addRoom.html?hotelId=" + hotelId);
+    });
 });
 function getRooms(hotelId){
     $.ajax({
-        url: 'http://localhost:8080/getHotelRooms',
+        url: 'http://' + getCookie("configServerIp") + ':8080/getHotelRooms',
         type: "GET",
         data: {"id": hotelId},
         xhrFields: {
@@ -46,13 +50,4 @@ function printRooms(element, index, array){
         "</li>";
 
     $(".rooms").append(html);
-}
-function getParamFromUrl(name){
-    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-    if (results==null){
-        return null;
-    }
-    else{
-        return results[1] || 0;
-    }
 }

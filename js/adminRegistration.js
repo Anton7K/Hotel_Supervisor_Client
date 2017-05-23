@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     function register(name, login, password) {
         $.ajax({
-            url: 'http://localhost:8080/registration',
+            url: 'http://' + getCookie("configServerIp") + ':8080/registration',
             type: "POST",
             data: {name: name, login: login, password: password},
             xhrFields: {

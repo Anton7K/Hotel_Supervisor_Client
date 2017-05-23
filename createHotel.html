@@ -7,9 +7,11 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-1.11.3.js" type="text/javascript"></script>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/cookieManager.js" type="text/javascript"></script>
     <script src="js/checkSession.js" type="text/javascript"></script>
     <script src="js/logout.js" type="text/javascript"></script>
     <script src="js/createHotel.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/configuration.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 
@@ -44,7 +46,7 @@
             <div class="form-group">
                 <label for="hotelName">Название</label>
 
-                <p class="error_message" id="name_error">Не корректное имя!</p>
+                <p class="error_message" id="name_error">Не корректное название!</p>
                 <input type="text" class="form-control" id="hotelName" placeholder="Введите название гостиницы">
             </div>
             <button id="createHotelButton" class="btn btn-info" style="float: right">Создать</button>

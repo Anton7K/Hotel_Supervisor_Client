@@ -6,6 +6,12 @@
 a{
     cursor: pointer;
 }
+
+#configureIp{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
 /*====================================================Authorize_page==============================*/
 .authorize_form_container{
     width: 300px;

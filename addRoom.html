@@ -1,10 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="ru">
     <meta charset="UTF-8">
     <title></title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-1.11.3.js" type="text/javascript"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/cookieManager.js" type="text/javascript"></script>
+    <script src="js/checkSession.js" type="text/javascript"></script>
+    <script src="js/logout.js" type="text/javascript"></script>
+    <script src="js/createHotel.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/configuration.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
+
+
+
+<header id="site_header">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand">Hotel Supervisor</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a>Гостиницы</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <p class="navbar-text navbar-right" id="user_name"></p>
+            </li>
+            <li id="logout_link"><a>Выход</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="main_content">
+    <ol class="breadcrumb">
+        <li><a href="home.html">Гостиницы</a></li>
+        <li><a href="#" id="roomsBreadcrumb">Комнаты</a></li>
+        <li class="active">Создание комнаты</li>
+    </ol>
+    <div class="authorize_form_container container">
+        <form>
+            <div class="form-group">
+                <label for="roomName">Название</label>
+
+                <p class="error_message" id="name_error">Не корректное название!</p>
+                <input type="text" class="form-control" id="roomName" placeholder="Введите название комнаты">
+            </div>
+            <button id="createRoomButton" class="btn btn-info" style="float: right">Добавить</button>
+        </form>
+    </div>
+</section>
 
 </body>
 </html>

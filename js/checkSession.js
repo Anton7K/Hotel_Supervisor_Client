@@ -3,7 +3,7 @@
  */
 $(document).ready(function () {
     $.ajax({
-        url: 'http://localhost:8080/sessionCheck',
+        url: 'http://' + getCookie("configServerIp") + ':8080/sessionCheck',
         type: "GET",
         xhrFields: {
             withCredentials: true

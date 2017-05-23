@@ -13,7 +13,7 @@ $(document).ready(function () {
 });
 function getEquipment(roomId){
     $.ajax({
-        url: 'http://localhost:8080/getRoomEquipment',
+        url: 'http://' + getCookie("configServerIp") + ':8080/getRoomEquipment',
         type: "GET",
         data: {"roomId": roomId},
         xhrFields: {
@@ -69,15 +69,7 @@ function printEquipment(element, index, array){
 
     $(".equipment").append(html);
 }
-function getParamFromUrl(name){
-    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-    if (results==null){
-        return null;
-    }
-    else{
-        return results[1] || 0;
-    }
-}
+
 function getCurrentValuePercentages(currentValue, maxValue){
     var division = currentValue / maxValue;
     if (division < 1) {

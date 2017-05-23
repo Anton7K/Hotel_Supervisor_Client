@@ -15,7 +15,7 @@ $(document).ready(function () {
 });
 function getHotels(){
     $.ajax({
-        url: 'http://localhost:8080/getHotels',
+        url: 'http://' + getCookie("configServerIp") + ':8080/getHotels',
         type: "GET",
         xhrFields: {
             withCredentials: true

@@ -2,11 +2,12 @@
  * Created by Anton on 22.05.2017.
  */
 $(document).ready(function () {
-    $("#createHotelButton").click(function (event) {
+    $("#createRoomButton").click(function (event) {
         event.preventDefault();
-        var hotelName = $("#hotelName").val();
-        if(isHotelNameValid(hotelName)){
-            createHotel(hotelName);
+        var roomName = $("#roomName").val();
+        var hotelId = getParamFromUrl("hotelId");
+        if(isRoomNameValid(roomName)){
+            createRoom(roomName, hotelId);
         }
         else{
             $("#name_error").css("display", "block");
@@ -14,11 +15,11 @@ $(document).ready(function () {
     });
 });
 
-function createHotel(name){
+function createRoom(name, hotelId){
     $.ajax({
-        url: 'http://' + getCookie("configServerIp") + ':8080/addHotel',
+        url: 'http://' + getCookie("configServerIp") + ':8080/addRoom',
         type: "POST",
-        data: {"hotelName": name},
+        data: {"roomName": name, "hotelId": hotelId},
         xhrFields: {
             withCredentials: true
         },
@@ -30,7 +31,7 @@ function createHotel(name){
     });
 }
 
-function isHotelNameValid(hotelName){
+function isRoomNameValid(hotelName){
     var isValidName=false;
     if(hotelName.trim()!="" && hotelName.trim()!=null){
         isValidName=true;

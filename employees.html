@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-1.11.3.js" type="text/javascript"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/cookieManager.js" type="text/javascript"></script>
+    <script src="js/checkSession.js" type="text/javascript"></script>
+    <script src="js/logout.js" type="text/javascript"></script>
+    <script src="js/urlParamsManager.js" type="text/javascript"></script>
+    <script src="js/employeesPage.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/configuration.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+
+
+<header id="site_header">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand">Hotel Supervisor</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a>Гостиницы</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <p class="navbar-text navbar-right" id="user_name"></p>
+            </li>
+            <li id="logout_link"><a>Выход</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="main_content">
+
+    <div class="rooms_container">
+        <ol class="breadcrumb">
+            <li><a href="home.html">Гостиницы</a></li>
+            <li class="active">Сотрудники</li>
+        </ol>
+        <ul class="list-group employees">
+
+        </ul>
+        <button class="btn btn-info" id="addEmployeeButton">+ Добавить сотрудника</button>
+    </div>
+</section>
+
+
+</body>
+</html>

@@ -7,6 +7,10 @@ $(document).ready(function () {
         var hotelId = $(this).closest(".list-group-item").attr("data-id");
         location.assign("rooms.html?hotelId=" + hotelId);
     });
+    $(".hotels").on("click",".view_employees_button", function () {
+        var hotelId = $(this).closest(".list-group-item").attr("data-id");
+        location.assign("employees.html?hotelId=" + hotelId);
+    });
     $("#createHotelButton").click(function (event) {
         event.preventDefault();
         window.location = "createHotel.html";

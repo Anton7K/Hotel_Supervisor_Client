@@ -5,7 +5,7 @@ $(document).ready(function () {
     var hotelId = getParamFromUrl("hotelId");
     var roomId = getParamFromUrl("roomId");
     $("#roomsBreadcrumb").attr("href", "rooms.html?hotelId=" + hotelId);
-    $("#equipmentBreadcrumb").attr("href", "equipment.html?hotelId=" + hotelId + "$roomId=" + roomId);
+    $("#equipmentBreadcrumb").attr("href", "equipment.html?hotelId=" + hotelId + "&roomId=" + roomId);
     $("#addNewEquipmentButton").click(function(event){
         event.preventDefault();
         var type = $("#equipmentTypeField").val();

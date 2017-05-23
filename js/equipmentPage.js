@@ -10,10 +10,14 @@ $(document).ready(function () {
         event.preventDefault();
         location.assign("addEquipment.html?roomId=" + roomId + "&hotelId=" + hotelId);
     });
-    //$(".equipment").on("click",".view_equipment_button", function () {
-    //    var roomId = $(this).closest(".list-group-item").attr("data-id");
-    //    location.assign("equipment.html?roomId=" + roomId);
-    //});
+    $(".equipment").on("click","#deleteEquipmentButton", function () {
+        var equipmentId = $(this).closest(".list-group-item").attr("data-id");
+        deleteEquipment(equipmentId);
+    });
+    $(".equipment").on("click","#editEquipmentButton", function () {
+        var equipmentId = $(this).closest(".list-group-item").attr("data-id");
+        location.assign("editEquipment.html?roomId=" + roomId + "&hotelId=" + hotelId + "&equipmentId=" + equipmentId);
+    });
 });
 function getEquipment(roomId){
     $.ajax({
@@ -65,10 +69,10 @@ function printEquipment(element, index, array){
     "</div>"+
     "<ul>"+
     "<li>"+
-    "<button class='btn btn-danger'>Удалить</button>"+
+    "<button class='btn btn-danger' id='deleteEquipmentButton'>Удалить</button>"+
     "</li>"+
     "<li>"+
-    "<button class='btn btn-info edit_equipment_button' style='display: block'>Редактировать</button>"+
+    "<button class='btn btn-info' id='editEquipmentButton' style='display: block'>Редактировать</button>"+
     "</li>"+
     "</ul>"+
     "</li>";
@@ -84,4 +88,20 @@ function getCurrentValuePercentages(currentValue, maxValue){
     else {
         return 100;
     }
+}
+
+function deleteEquipment(equipmentId){
+    $.ajax({
+        url: 'http://' + getCookie("configServerIp") + ':8080/deleteEquipment',
+        type: "POST",
+        data: {"id": equipmentId},
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (received) {
+            if(received){
+                location.reload();
+            }
+        }
+    });
 }

@@ -6,6 +6,10 @@ $(document).ready(function () {
     var roomId = getParamFromUrl("roomId");
     $("#roomsBreadcrumb").attr("href", "rooms.html?hotelId=" + hotelId);
     getEquipment(roomId);
+    $("#addEquipmentButton").click(function(event){
+        event.preventDefault();
+        location.assign("addEquipment.html?roomId=" + roomId + "&hotelId=" + hotelId);
+    });
     //$(".equipment").on("click",".view_equipment_button", function () {
     //    var roomId = $(this).closest(".list-group-item").attr("data-id");
     //    location.assign("equipment.html?roomId=" + roomId);
@@ -29,6 +33,8 @@ function getEquipment(roomId){
         }
     });
 }
+
+
 function printEquipment(element, index, array){
     var equipmentId = element.id;
     var type = element.type;

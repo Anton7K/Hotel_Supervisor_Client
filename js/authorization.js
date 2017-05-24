@@ -24,7 +24,12 @@ $(document).ready(function () {
             },
             success: function (received) {
                 if (received.isAuthorized) {
-                    window.location = "home.html";
+                    if(role==="admin") {
+                        window.location = "home.html";
+                    }
+                    if(role==="employee"){
+                        window.location = "hotelEquipment.html";
+                    }
                 }
                 else{
                     var error = received.error;

@@ -25,7 +25,7 @@ function createRoom(name, hotelId){
         },
         success: function (received) {
             if (received) {
-                window.location = "home.html";
+                location.assign("rooms.html?hotelId=" + hotelId);
             }
         }
     });

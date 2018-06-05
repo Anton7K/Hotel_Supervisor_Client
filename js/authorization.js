@@ -16,7 +16,8 @@ $(document).ready(function () {
     });
     function authorize(log, pass, role) {
         $.ajax({
-            url: 'http://' + getCookie("configServerIp") + ':8080/authorization',
+            //url: 'http://' + getCookie("configServerIp") + ':8080/authorization',
+            url: 'http://localhost:8080/authorization',
             type: "POST",
             data: {login: log, password: pass, user_role: role},
             xhrFields: {

@@ -12,6 +12,17 @@ $(document).ready(function () {
         event.preventDefault();
         location.assign("addRoom.html?hotelId=" + hotelId);
     });
+    $(".rooms").on("click",".edit_room_button", function () {
+        var roomId = $(this).closest(".list-group-item").attr("data-id");
+        location.assign("editRoom.html?roomId=" + roomId + "&hotelId=" + hotelId);
+    });
+    $(".rooms").on("click",".delete_room_button", function () {
+        var roomId = $(this).closest(".list-group-item").attr("data-id");
+        $('#roomDeletingModal').modal('show');
+        $('#roomDeletingModal .ok-button').click(function () {
+            deleteRoom(roomId, hotelId);
+        });
+    });
 });
 function getRooms(hotelId){
     $.ajax({
@@ -38,10 +49,10 @@ function printRooms(element, index, array){
         "<ul>" +
             //"<li><span class='badge'>14</span></li>"+
         "<li>" +
-        "<button class='btn btn-danger'>Удалить</button>" +
+        "<button class='btn btn-danger delete_room_button'>Удалить</button>" +
         "</li>" +
         "<li>" +
-        "<button class='btn btn-info edit_button'>Редактировать</button>" +
+        "<button class='btn btn-info edit_room_button'>Редактировать</button>" +
         "</li>" +
         "<li>" +
         "<button class='btn btn-default view_equipment_button'>Оборудование</button>" +
@@ -50,4 +61,21 @@ function printRooms(element, index, array){
         "</li>";
 
     $(".rooms").append(html);
+}
+
+function deleteRoom(roomId, hotelId){
+    $.ajax({
+        url: 'http://' + getCookie("configServerIp") + ':8080/deleteRoom',
+        type: "POST",
+        data: {"roomId": roomId},
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (received) {
+            if (received===true) {
+                $(".rooms").empty();
+                getRooms(hotelId);
+            }
+        }
+    });
 }

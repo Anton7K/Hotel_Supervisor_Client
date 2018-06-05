@@ -10,7 +10,9 @@
     <script src="js/cookieManager.js" type="text/javascript"></script>
     <script src="js/checkSession.js" type="text/javascript"></script>
     <script src="js/logout.js" type="text/javascript"></script>
-    <script src="js/editEquipment.js" type="text/javascript"></script>
+    <script src="js/rooms/editRoom.js" type="text/javascript"></script>
+
+    <!--<script src="js/editEquipment.js" type="text/javascript"></script>-->
     <script src="js/urlParamsManager.js" type="text/javascript"></script>
     <script src="js/configuration.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -41,30 +43,23 @@
     <ol class="breadcrumb">
         <li><a href="home.html">Гостиницы</a></li>
         <li><a href="#" id="roomsBreadcrumb">Комнаты</a></li>
-        <li><a href="#" id="equipmentBreadcrumb">Оборудование</a></li>
-        <li class="active">Изменение оборудования</li>
+        <li class="active">Изменение комнаты</li>
     </ol>
-    <div class="authorize_form_container container">
+    <div class="edit_form_container container">
         <form>
             <div class="form-group">
-                <label for="equipmentTypeField">Тип</label>
-                <select class="form-control" id="equipmentTypeField">
-                    <option>Мыло</option>
-                    <option>Туалетная бумага</option>
+                <label for="hotelField">Гостиница</label>
+                <select class="form-control" id="hotelField">
+
                 </select>
                 <!--<input type="" class="form-control" id="equipmentTypeField" >-->
             </div>
-            <ul class="dropdown-menu">
-                <li><a href="#">Пункт 1</a></li>
-                <li><a href="#">Пункт 2</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Пункт 3</a></li>
-            </ul>
+
             <div class="form-group">
-                <label for="maxValueField">Максимальное количество</label>
-                <input type="number" class="form-control" id="maxValueField" placeholder="Введите максимальное количество">
+                <label for="roomName">Название комнаты</label>
+                <input type="text" class="form-control" id="roomName">
             </div>
-            <button id="saveEquipmentChangesButton" class="btn btn-info" style="float: right">Сохранить изменения</button>
+            <button id="saveRoomChangesButton" class="btn btn-info" style="float: right">Сохранить изменения</button>
         </form>
     </div>
 </section>

@@ -15,6 +15,14 @@ $(document).ready(function () {
         event.preventDefault();
         window.location = "createHotel.html";
     });
+    $(".hotels").on("click",".delete_hotel_button", function () {
+        var hotelId = $(this).closest(".list-group-item").attr("data-id");
+        $('#hotelDeletingModal').modal('show');
+        $('#hotelDeletingModal .ok-button').click(function () {
+            deleteHotel(hotelId)
+        });
+        //deleteHotel(hotelId)
+    });
 
 });
 function getHotels(){
@@ -41,7 +49,7 @@ function printHotels(element, index, array){
         "<ul>" +
             //"<li><span class='badge'>14</span></li>"+
         "<li>" +
-        "<button class='btn btn-danger'>Удалить</button>" +
+        "<button class='btn btn-danger delete_hotel_button'>Удалить</button>" +
         "</li>" +
         "<li>" +
         "<button class='btn btn-default view_employees_button'>Работники</button>" +

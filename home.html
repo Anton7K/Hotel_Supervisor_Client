@@ -11,6 +11,7 @@
     <script src="js/checkSession.js" type="text/javascript"></script>
     <script src="js/logout.js" type="text/javascript"></script>
     <script src="js/hotels/hotelsPage.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/hotels/deleteHotel.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/configuration.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
@@ -75,6 +76,27 @@
         <!--</div>-->
     </section>
 
+    <!-- Modal -->
+    <div class="modal fade" id="hotelDeletingModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Предупреждение!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>При удалении гостиницы будут удалены все работники, комнаты и оборудование связанные с ней. Подтвердить удаление?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default ok-button" data-dismiss="modal">Да</button>
+                    <button type="button" class="btn btn-default cancel-button" data-dismiss="modal">Отмена</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 </body>
 </html>

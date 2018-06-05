@@ -13,7 +13,8 @@ a{
     cursor: pointer;
 }
 /*====================================================Authorize_page==============================*/
-.authorize_form_container{
+.authorize_form_container,
+.edit_form_container{
     width: 300px;
     margin-top: 5%;
     margin-bottom: 5%;

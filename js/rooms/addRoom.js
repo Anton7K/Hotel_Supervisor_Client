@@ -2,10 +2,12 @@
  * Created by Anton on 22.05.2017.
  */
 $(document).ready(function () {
+    var hotelId = getParamFromUrl("hotelId");
+    $("#roomsBreadcrumb").attr("href", "rooms.html?hotelId=" + hotelId);
     $("#createRoomButton").click(function (event) {
         event.preventDefault();
         var roomName = $("#roomName").val();
-        var hotelId = getParamFromUrl("hotelId");
+        //var hotelId = getParamFromUrl("hotelId");
         if(isRoomNameValid(roomName)){
             createRoom(roomName, hotelId);
         }
